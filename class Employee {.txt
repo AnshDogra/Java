@@ -1,0 +1,40 @@
+class Employee {
+    String name;
+    int id;
+
+    // Default constructor
+    Employee() {
+        name = "Unknown";
+        id = 0;
+    }
+
+    // Parameterized constructor
+    Employee(String n, int i) {
+        name = n;
+        id = i;
+    }
+
+    // Method overloading
+    void display() {
+        System.out.println("Name: " + name + ", ID: " + id);
+    }
+
+    void display(String dept) {
+        System.out.println("Name: " + name + ", ID: " + id + ", Department: " + dept);
+    }
+
+    // Destructor simulation
+    protected void finalize() {
+        System.out.println("Object is being destroyed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee e1 = new Employee();
+        e1.display();
+
+        Employee e2 = new Employee("Alice", 101);
+        e2.display("HR");
+    }
+}
